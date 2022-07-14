@@ -8,6 +8,7 @@ const todoList = [  'D-35일: 훈련 대상자 판단 ',
                     'D-8일 : 미교부 보고 / 사유서 작성(보충교육) ',
                     'D-1일 : 훈련참석 독려 문자 발송 ',
                     'D-Day : 훈련결산 / 당일 사고자 보고'] ;
+let drillEvents = [];
 
 function getDrillInfo(){
     let x = document.getElementById("drillInfoForm");
@@ -18,19 +19,22 @@ function getDrillInfo(){
         date : new Date(x.elements[2].value.substring(0,4) + "/" + x.elements[2].value.substring(5,7) + "/"
         + x.elements[2].value.substring(8))
     }
+
     console.log(drillInfo);
+
     document.getElementById("calcResult1").innerHTML = drillInfo.date.getFullYear() + '.'
     + (drillInfo.date.getMonth()+1) + '.' + drillInfo.date.getDate() + '(' + dayOfTheWeek[drillInfo.date.getDay()]
     + ')' + ' ' + drillInfo.name; + "<br/>" ;
     document.getElementById("calcResult2").innerHTML = "";
     
-    for (i=0;i<8;i++) {
+    for (i=0;i<todoList.length;i++) {
         drillInfo.date.setDate(drillInfo.date.getDate() + differenceInDays[i]);
+        drillEvents.push(
+            {title: drillInfo.name, start: drillInfo.date, allDay: true, backgroundColor: "purple"},
+        );
         document.getElementById("calcResult2").innerHTML += drillInfo.date.getFullYear() + '.' 
         + (drillInfo.date.getMonth()+1) + '.' + drillInfo.date.getDate() + '(' + dayOfTheWeek[drillInfo.date.getDay()]
         + ')' + ' ' + todoList[i] + "<br/>" ;
     }
-
-
-
+    console.log(drillEvents);
 }
