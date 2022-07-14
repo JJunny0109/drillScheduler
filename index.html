@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>훈련일정 계산기 v1.0.0</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>훈련일정 계산기</h1>
+
+    <div><form id="drillInfoForm" onsubmit="return false;">
+        <input type="text" placeholder="훈련이름"><br>
+        <select>
+            <option value="동미참훈련">동미참훈련</option>
+            <option value="기본훈련">기본훈련</option>
+            <option value="작계훈련">작계훈련</option>
+            <option value="기타">기타</option>
+        </select><br>
+        <input type="date"><br>
+        <input type="submit" onclick="getDrillInfo()">
+    </form></div>
+
+    <div><p id="calcResult1"></p>
+    <p id="calcResult2"></p>
+    </div>    
+
+</body>
+</html>
