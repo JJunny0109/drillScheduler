@@ -8,6 +8,7 @@ const todoList = [  'D-35일: 훈련 대상자 판단 ',
                     'D-8일 : 미교부 보고 / 사유서 작성(보충교육) ',
                     'D-1일 : 훈련참석 독려 문자 발송 ',
                     'D-Day : 훈련결산 / 당일 사고자 보고'] ;
+const dDay = ['(D-35)','(D-30)','(D-22)','(D-15)','(D-9)','(D-8)','(D-1)','(D-Day)'];
 let drillEvents = [];
 
 function getDrillInfo(){
@@ -30,8 +31,10 @@ function getDrillInfo(){
     for (i=0;i<todoList.length;i++) {
         drillInfo.date.setDate(drillInfo.date.getDate() + differenceInDays[i]);
         console.log(drillInfo.date);
+        let y = new Date(drillInfo.date.getFullYear() + "/" + (drillInfo.date.getMonth() + 1) + "/" + drillInfo.date.getDate() ) ;
+        console.log(y);
         drillEvents.push(
-            {title: drillInfo.name, start: drillInfo.date, allDay: true, backgroundColor: "purple"},
+            {title: drillInfo.name + dDay[i], start: y, allDay: true, backgroundColor: drillInfo.type, textColor:'black', borderColor:'#FFFFFF'},
         );
         document.getElementById("calcResult2").innerHTML += drillInfo.date.getFullYear() + '.' 
         + (drillInfo.date.getMonth()+1) + '.' + drillInfo.date.getDate() + '(' + dayOfTheWeek[drillInfo.date.getDay()]
@@ -41,11 +44,5 @@ function getDrillInfo(){
 }
 
 function addSchedule(){
-    calendar.addEvent(
-
-        {
-            title:'2',
-            start:'2022-07-07',
-        },
-    );
+    calendar.addEventSource(drillEvents);
 }

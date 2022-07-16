@@ -13,23 +13,23 @@
     <script src='fullcalendar/ko.js'></script>
 </head>
 <body>
-    <h1>훈련일정 계산기</h1>
+    <h1 style="text-align:center">훈련일정 계산기</h1>
 
-    <div id="drillInfoInput"><form id="drillInfoForm" onsubmit="return false;">
+    <div class="drillInfoForm"><form id="drillInfoForm" onsubmit="return false;">
         <input type="text" placeholder="훈련이름"><br>
         <select>
-            <option value="동미참훈련">동미참훈련</option>
-            <option value="기본훈련">기본훈련</option>
-            <option value="작계훈련">작계훈련</option>
-            <option value="기타">기타</option>
+            <option value="#B4C3FF">동미참훈련</option>
+            <option value="#FFF064">기본훈련</option>
+            <option value="#6DD66D">작계훈련</option>
+            <option value="#787878">기타</option>
         </select><br>
         <input type="date"><br>
         <input type="submit" onclick="getDrillInfo()">
+        <input class = 'addScheduleButton' type='button' value="일정에 추가" onclick="addSchedule()">
     </form></div>
 
-    <div><p id="calcResult1"></p>
+    <div class = 'drillInfoForm'><p id="calcResult1"></p>
     <p id="calcResult2"></p>
-    <input type='button' value="일정에 추가" onclick="addSchedule()">
     </div>    
     
     <div id='drillScheduleCalendar'></div>
