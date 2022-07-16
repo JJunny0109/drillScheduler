@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>훈련일정 계산기</title>
     <link rel="stylesheet" href="style.css">
+    <script src="calendar.js"></script>
     <script src="script.js"></script>
+    <link href='fullcalendar/core/main.css' rel='stylesheet' />
+    <script src='fullcalendar/core/main.js'></script>
+    <script src='fullcalendar/ko.js'></script>
 </head>
 <body>
     <h1>훈련일정 계산기</h1>
@@ -25,8 +29,9 @@
 
     <div><p id="calcResult1"></p>
     <p id="calcResult2"></p>
-    <input type='button' value="일정에 추가">
+    <input type='button' value="일정에 추가" onclick="addSchedule()">
     </div>    
     
+    <div id='drillScheduleCalendar'></div>
 </body>
 </html>

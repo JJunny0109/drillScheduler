@@ -21,7 +21,7 @@ function getDrillInfo(){
     }
 
     console.log(drillInfo);
-
+    drillEvents = [];
     document.getElementById("calcResult1").innerHTML = drillInfo.date.getFullYear() + '.'
     + (drillInfo.date.getMonth()+1) + '.' + drillInfo.date.getDate() + '(' + dayOfTheWeek[drillInfo.date.getDay()]
     + ')' + ' ' + drillInfo.name; + "<br/>" ;
@@ -29,6 +29,7 @@ function getDrillInfo(){
     
     for (i=0;i<todoList.length;i++) {
         drillInfo.date.setDate(drillInfo.date.getDate() + differenceInDays[i]);
+        console.log(drillInfo.date);
         drillEvents.push(
             {title: drillInfo.name, start: drillInfo.date, allDay: true, backgroundColor: "purple"},
         );
@@ -37,4 +38,14 @@ function getDrillInfo(){
         + ')' + ' ' + todoList[i] + "<br/>" ;
     }
     console.log(drillEvents);
+}
+
+function addSchedule(){
+    calendar.addEvent(
+
+        {
+            title:'2',
+            start:'2022-07-07',
+        },
+    );
 }
