@@ -6,9 +6,9 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    }
+}
 
-  input[type=date], select {
+input[type=date], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -31,7 +31,7 @@ input[type=submit] {
   
 input[type=submit]:hover {
     background-color: #45a049;
-  }
+}
   
 .drillInfoForm{
     border-radius: 5px;
@@ -44,7 +44,7 @@ input[type=submit]:hover {
 #calcResult1 {
     font-weight : bold;
     font-size : 2em;
-  }
+}
 
   
 .addScheduleButton{
@@ -56,11 +56,11 @@ input[type=submit]:hover {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
+}
 
 .addScheduleButton:hover{
     background-color: #2d93c7;
-  }
+}
 
 #drillScheduleCalendar{
   max-width: 1200px;
