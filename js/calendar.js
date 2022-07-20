@@ -23,7 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
       dateClick: function(info) {
         eventStartDay = info.dateStr ;
         modalOpen();
-      }
+      },
+      eventDidMount: function(info) {
+        tippy(info.el, {
+            content:  info.event.extendedProps.description,//이벤트 디스크립션을 툴팁으로 가져옵니다. 
+        });
+      },
     });
     calendar.render();
   });
