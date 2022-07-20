@@ -70,3 +70,11 @@
 .fc-event-title.fc-sticky{
     white-space: normal;
 }
+
+th.fc-col-header-cell.fc-day.fc-day-sun{
+    color: red;
+}
+
+th.fc-col-header-cell.fc-day.fc-day-sat{
+    color: blue;
+}

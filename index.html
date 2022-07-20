@@ -22,10 +22,13 @@
     <div class="drillInfoForm"><form id="drillInfoForm" onsubmit="return false;">
         <input type="text" placeholder="훈련이름"><br>
         <select>
-            <option value="#B4C3FF">동미참훈련</option>
-            <option value="#FFF064">기본훈련</option>
-            <option value="#6DD66D">작계훈련</option>
-            <option value="#787878">기타</option>
+            <option value="rgb(255, 91, 89)">빨강</option>
+            <option value="rgb(255, 162, 31)">주황</option>
+            <option value="rgb(255, 223, 36)">노랑</option>
+            <option value="rgb(46, 236, 83)">초록</option>
+            <option value="rgb(31, 149, 255)">파랑</option>
+            <option value="rgb(203, 127, 242)">보라</option>
+            <option value="rgb(147, 144, 163)">회색</option>
         </select><br>
         <input type="date"><br>
         <input type="submit" onclick="getDrillInfo()">
@@ -45,11 +48,13 @@
             <form id="modalAddEventForm" onsubmit="return false;">
                 <input type="text" placeholder="일정이름" class="name"><br>
                 <select>
-                    <option value="">--- 색상선택 ---</option>
-                    <option value="#B4C3FF">보라</option>
-                    <option value="#FFF064">노랑</option>
-                    <option value="#6DD66D">초록</option>
-                    <option value="#787878">검정</option>
+                    <option value="rgb(255, 91, 89)">빨강</option>
+                    <option value="rgb(255, 162, 31)">주황</option>
+                    <option value="rgb(255, 223, 36)">노랑</option>
+                    <option value="rgb(46, 236, 83)">초록</option>
+                    <option value="rgb(31, 149, 255)">파랑</option>
+                    <option value="rgb(203, 127, 242)">보라</option>
+                    <option value="rgb(147, 144, 163)">회색</option>
                 </select><br>
                 <textarea placeholder="메모" class="memo"></textarea><br>
                 <input type="submit" onclick="addNewEvent()" value="추가">
