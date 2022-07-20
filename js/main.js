@@ -34,7 +34,7 @@ function getDrillInfo(){
         console.log(y);
         if(i == 1 || i == 2 || i == 3 || i == 5 || i == 6){
             drillEvents.push(
-                {title: drillInfo.name + dDay[i], start: y, allDay: true, backgroundColor: drillInfo.type, textColor:'black', borderColor:'#FFFFFF'},
+                {title: drillInfo.name + dDay[i], start: y, allDay: true, color: drillInfo.type, textColor:'black'},
             );
         }
         document.getElementById("calcResult2").innerHTML += drillInfo.date.getFullYear() + '.' 

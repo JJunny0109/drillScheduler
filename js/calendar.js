@@ -13,9 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
       selectable: true,
       locale: 'ko',
       eventClick: function(info){
-        if(confirm(info.event.title + " 일정을 삭제하시겠습니까?")){
+        if(confirm(info.event.title + " 일정을 삭제하시겠습니까?" + '\n메모 : ' + info.event.extendedProps.description)){
           // 확인 클릭 시
           info.event.remove();
+          alert(info.event.title + ' 이/가 삭제되었습니다')
       }
       },
       dayMaxEvents: true,
