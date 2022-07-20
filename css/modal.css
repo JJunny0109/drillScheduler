@@ -1,0 +1,81 @@
+#modalAddEvent.modal{
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modalAddEvent .modalContent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 400px;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+    transform: translateX(-50%) translateY(-50%);
+}
+#modalAddEventForm .name{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+    
+#modalAddEventForm select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#modalAddEventForm .memo{
+    width: 100%;
+    height: 120px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+#modalAddEventForm input[type=button] {
+    background-color: white;
+    padding: 14px 20px;
+    margin: 4px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+#modalAddEventForm input[type=button]:hover {
+    background-color: #afafaf;
+}
+
+#modalAddEventForm input[type=submit] {
+    background-color: #4c99af;
+    color: white;
+    padding: 14px 20px;
+    margin: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+#modalAddEventForm input[type=submit]:hover {
+    background-color: #4569a0;
+}

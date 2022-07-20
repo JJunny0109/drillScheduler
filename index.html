@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>훈련일정 계산기</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
     <script src="js/calendar.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/modal.js"></script>
     <link href='vendor/fullcalendar/core/main.css' rel='stylesheet' />
     <script src='vendor/fullcalendar/core/main.js'></script>
     <script src='vendor/fullcalendar/ko.js'></script>
@@ -28,10 +30,30 @@
         <input class = 'addScheduleButton' type='button' value="일정에 추가" onclick="addSchedule()">
     </form></div>
 
-    <div class = 'drillInfoForm'><p id="calcResult1"></p>
+    <div class='drillInfoForm'><p id="calcResult1"></p>
     <p id="calcResult2"></p>
     </div><br>
     
     <div id='drillScheduleCalendar'></div>
+
+    <div id="modalAddEvent" class="modal">
+        <div class="modalContent">
+            <h2>일정 추가</h2>
+            <hr width = "100%">
+            <form id="modalAddEventForm" onsubmit="return false;">
+                <input type="text" placeholder="일정이름" class="name"><br>
+                <select>
+                    <option value="">--- 색상선택 ---</option>
+                    <option value="#B4C3FF">보라</option>
+                    <option value="#FFF064">노랑</option>
+                    <option value="#6DD66D">초록</option>
+                    <option value="#787878">검정</option>
+                </select><br>
+                <textarea placeholder="메모" class="memo"></textarea><br>
+                <input type="submit" onclick="addNewEvent()" value="추가">
+                <input type="button" onclick="modalClose()" value="취소">
+            </form>
+        </div>
+    </div>
 </body>
 </html>

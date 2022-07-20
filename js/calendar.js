@@ -1,4 +1,5 @@
 let calendar = null;
+let eventStartDay = null;
 document.addEventListener('DOMContentLoaded', function() {
     const calendarEl = document.getElementById('drillScheduleCalendar');
     calendar = new FullCalendar.Calendar(calendarEl, {
@@ -19,15 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       dayMaxEvents: true,
       dateClick: function(info) {
-        let eventName = prompt('일정 이름을 입력하시오');
-        if(eventName != null){
-          calendar.addEvent({
-            title: eventName,
-            start: info.dateStr,
-            allDay: true
-            }
-          );
-        }
+        eventStartDay = info.dateStr ;
+        modalOpen();
       }
     });
     calendar.render();
