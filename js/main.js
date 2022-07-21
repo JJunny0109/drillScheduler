@@ -20,7 +20,6 @@ function getDrillInfo(){
         + x.elements[2].value.substring(8))
     }
 
-    console.log(drillInfo);
     drillEvents = [];
     document.getElementById("calcResult1").innerHTML = drillInfo.date.getFullYear() + '.'
     + (drillInfo.date.getMonth()+1) + '.' + drillInfo.date.getDate() + '(' + dayOfTheWeek[drillInfo.date.getDay()]
@@ -31,7 +30,6 @@ function getDrillInfo(){
         drillInfo.date.setDate(drillInfo.date.getDate() + differenceInDays[i]);
         console.log(drillInfo.date);
         let y = new Date(drillInfo.date.getFullYear() + "/" + (drillInfo.date.getMonth() + 1) + "/" + drillInfo.date.getDate() ) ;
-        console.log(y);
         if(i == 1 || i == 2 || i == 3 || i == 5 || i == 6){
             drillEvents.push(
                 {title: drillInfo.name + '(' + dDay[i] + ')' , start: y, allDay: true, color: drillInfo.type, textColor:'black', description: todoList[i],},
@@ -46,4 +44,17 @@ function getDrillInfo(){
 
 function addSchedule(){
     calendar.addEventSource(drillEvents);
+}
+
+function saveEventSource(){
+    if(confirm('이벤트를 저장하시겠습니까?') == true){
+        localStorage.setItem('savedEvents', JSON.stringify(calendar.getEvents()));
+    }
+}
+
+function deleteEventSource(){
+    if(confirm('모든 이벤트를 삭제하시겠습니까?') == true){
+        localStorage.removeItem('savedEvents');
+        location.reload();
+    }
 }

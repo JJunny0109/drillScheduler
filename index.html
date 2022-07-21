@@ -17,8 +17,10 @@
     <script src="https://unpkg.com/tippy.js@6"></script>
 </head>
 <body>
-    <h1 style="text-align:center">훈련일정 계산기</h1>
-
+    <h1 style="text-align:center">훈련일정 계산기</h1><br>
+    <button onclick="saveEventSource()" class="saveEventBtn">저장</button>
+    <button onclick="deleteEventSource()" class="deleteEventBtn">초기화</button>
+    
     <div class="drillInfoForm"><form id="drillInfoForm" onsubmit="return false;">
         <input type="text" placeholder="훈련이름"><br>
         <select>
@@ -30,7 +32,7 @@
             <option value="rgb(203, 127, 242)">보라</option>
             <option value="rgb(147, 144, 163)">회색</option>
         </select><br>
-        <input type="date"><br>
+        <input type="date" value='2022-06-02'><br>
         <input type="submit" onclick="getDrillInfo()">
         <input class = 'addScheduleButton' type='button' value="일정에 추가" onclick="addSchedule()">
     </form></div>

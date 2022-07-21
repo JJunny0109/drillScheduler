@@ -78,3 +78,34 @@ th.fc-col-header-cell.fc-day.fc-day-sun{
 th.fc-col-header-cell.fc-day.fc-day-sat{
     color: blue;
 }
+
+.saveEventBtn {
+    background-color: #86b6c3;
+    color: white;
+    padding: 14px 20px;
+    margin: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    border: none;
+    
+}
+
+.saveEventBtn:hover {
+    background-color: #8ea7cb;
+}
+
+.deleteEventBtn {
+    background-color: #ff6e6e;
+    color: white;
+    padding: 14px 20px;
+    margin: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    border: none;
+}
+
+.deleteEventBtn:hover {
+    background-color: rgb(247, 56, 56);
+}

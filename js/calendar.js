@@ -1,5 +1,8 @@
 let calendar = null;
 let eventStartDay = null;
+let savedEventSource = JSON.parse(localStorage.getItem('savedEvents'));
+console.log(savedEventSource);
+
 document.addEventListener('DOMContentLoaded', function() {
     const calendarEl = document.getElementById('drillScheduleCalendar');
     calendar = new FullCalendar.Calendar(calendarEl, {
@@ -31,4 +34,5 @@ document.addEventListener('DOMContentLoaded', function() {
       },
     });
     calendar.render();
+    calendar.addEventSource(savedEventSource);
   });
