@@ -86,7 +86,6 @@ th.fc-col-header-cell.fc-day.fc-day-sat{
     margin: 4px;
     border-radius: 4px;
     cursor: pointer;
-    float: right;
     border: none;
     
 }
@@ -102,10 +101,28 @@ th.fc-col-header-cell.fc-day.fc-day-sat{
     margin: 4px;
     border-radius: 4px;
     cursor: pointer;
-    float: right;
     border: none;
 }
 
 .deleteEventBtn:hover {
     background-color: rgb(247, 56, 56);
+}
+
+.exportEventBtn {
+    background-color: #af6eff;
+    color: rgb(255, 255, 255);
+    padding: 14px 20px;
+    margin: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+.exportEventBtn:hover {
+    background-color: rgb(247, 56, 168);
+}
+
+.buttons{
+    margin: auto;
+    text-align: center;
 }

@@ -49,6 +49,7 @@ function addSchedule(){
 function saveEventSource(){
     if(confirm('이벤트를 저장하시겠습니까?') == true){
         localStorage.setItem('savedEvents', JSON.stringify(calendar.getEvents()));
+        location.reload();
     }
 }
 
@@ -57,4 +58,30 @@ function deleteEventSource(){
         localStorage.removeItem('savedEvents');
         location.reload();
     }
+}
+
+function getToday(uglyDate){
+    let date = new Date(uglyDate);
+    let year = date.getFullYear();
+    let month = ("0" + (1 + date.getMonth())).slice(-2);
+    let day = ("0" + date.getDate()).slice(-2);
+    return month + "/" + day + "/" + year ;
+}
+
+function exportEventSource(){
+    cal = ics();
+    let eventStartDate = null;
+    let eventEndDate = null;
+    for(i=0;i<savedEventSource.length;i++){
+        if(savedEventSource[i].end == undefined){
+            eventStartDate = getToday(savedEventSource[i].start);
+            cal.addEvent(savedEventSource[i].title, savedEventSource[i].extendedProps.description, '', eventStartDate, eventStartDate);
+        }
+        else{
+            eventStartDate = getToday(savedEventSource[i].start);
+            eventEndDate = getToday(savedEventSource[i].end);
+            cal.addEvent(savedEventSource[i].title, savedEventSource[i].extendedProps.description, '', eventStartDate, eventEndDate);
+        }
+    }
+    cal.download('훈련일정');
 }

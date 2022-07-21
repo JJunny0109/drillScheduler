@@ -15,12 +15,15 @@
     <script src='vendor/fullcalendar/ko.js'></script>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="vendor/ics/ics.deps.min.js"></script>
 </head>
 <body>
     <h1 style="text-align:center">훈련일정 계산기</h1><br>
-    <button onclick="saveEventSource()" class="saveEventBtn">저장</button>
-    <button onclick="deleteEventSource()" class="deleteEventBtn">초기화</button>
-    
+    <div class="buttons">
+        <button onclick="saveEventSource()" class="saveEventBtn">저장</button>
+        <button onclick="deleteEventSource()" class="deleteEventBtn">초기화</button>
+        <button onclick="exportEventSource()" class="exportEventBtn">추출</button>
+    </div>
     <div class="drillInfoForm"><form id="drillInfoForm" onsubmit="return false;">
         <input type="text" placeholder="훈련이름"><br>
         <select>
