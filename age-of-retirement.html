@@ -11,16 +11,146 @@
     <nav>
         <h1>훈련일정 계산기</h1>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="/index.html">Home</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
+        <li><a href="/age-of-retirement.html">Retirement Age Calculator</a></li>
         <li><a href="mailto:jjunny0109@gmail.com">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-hello!
+    <div class="container"><h1>예비역간부 연령정년 계산기</h3>
+		
+      <table border="3">
+        <cation>연령정년표 現 <input id="yearName" value="2023" size='4' maxlength="4" oninput='immediateCalculateYear()'> 년도 기준</cation>
+        <th colspan="2">계급</th>
+        <th>정년</th>
+        <th>출생년도(까지)</th>
+      
+        <tr>
+          <td rowspan="11" bgcolor="skyblue" align="center">장교</td>
+          <td>원수</td>
+          <td align="center">종신</td>
+          <td align="center" id="13">Error</td>
+        </tr>
+      
+        <tr>
+          <td>대장</td>
+          <td>63세</td>
+          <td align="center" id="12"></td>
+        </tr>
+       
+        <tr>
+          <td>중장</td>
+          <td>61세</td>
+          <td align="center" id="11"></td>
+        </tr>
+      
+        <tr>
+          <td>소장</td>
+          <td>59세</td>
+          <td align="center" id="10"></td>
+        </tr>
+      
+        <tr>
+          <td>준장</td>
+          <td>58세</td>
+          <td align="center" id="9"></td>
+        </tr>
+      
+        <tr>
+          <td>대령</td>
+          <td>56세</td>
+          <td align="center" id="8"></td>
+        </tr>
+      
+        <tr>
+          <td>중령</td>
+          <td>53세</td>
+          <td align="center" id="7"></td>
+        </tr>
+      
+        <tr>
+          <td>소령</td>
+          <td>45세</td>
+          <td align="center" id="6"></td>
+        </tr>
+        <tr>
+          <td>대위</td>
+          <td>43세</td>
+          <td rowspan="3" align="center" id="5"></td>
+        </tr>
+      
+        <tr>
+          <td>중위</td>
+          <td>43세</td>
+        </tr>
+      
+        <tr>
+          <td>소위</td>
+          <td>43세</td>
+        </tr>
+      
+        <tr>
+          <td rowspan="1" bgcolor="Coral" align="center">준사관</td>
+          <td>준위</td>
+          <td>55세</td>
+          <td rowspan="2" align="center" id="4"></td>
+        </tr>
+      
+        <tr>
+          <td rowspan="4" bgcolor="Aquamarine" align="center">부사관</td>
+          <td>원사</td>
+          <td>55세</td>
+        </tr>
+      
+        <tr>
+          <td>상사</td>
+          <td>53세</td>
+          <td align="center" id="3"></td>
+        </tr>
+      
+        <tr>
+          <td>중사</td>
+          <td>45세</td>
+          <td align="center" id="2"></td>
+        </tr>
+      
+        <tr>
+          <td>하사</td>
+          <td>40세</td>
+          <td align="center" id="1"></td>
+        </tr>
+        </table>
+      
+        <script>
+          var RE_A = [40, 45, 53, 55, 43, 45, 53, 56, 58, 59, 61, 63, '종신'];
+          for (i=0;i<15;i++){       
+            var Birth_Limit = 2022 - RE_A[i] ;
+            document.getElementById(i+1).innerHTML = Birth_Limit + '년생';
+            }
+          
+          
+          function immediateCalculateYear(){ /* 입력값 받아서 계산시작 */
+            var This_Year = document.getElementById('yearName').value;
+            for (i=0;i<15;i++){       
+            var Birth_Limit = This_Year - RE_A[i] ;
+            document.getElementById(i+1).innerHTML = Birth_Limit + '년생';
+            }
+          }
+          
+        </script><br>
+      
+        <details> <summary>예비군 조직편성과 운영에 관한 훈령 제3장 제1절 제6조</summary>
+          <dd style="font-size:x-small"> 1. 예비역의 장교,준사관,부사관은 [군인사법] 제 8조 1항에 의한 현역군인 계급별 연령 정년이 되는 해의 12월 31일까지 복무한다.
+           <br> <b>[연령정년]</b> (만 나이가 되는 해 까지)
+           <br> 원수 : 종신 / 대장 : 63세 / 중장 : 61세 /소장 : 59세 / 준장 : 58세
+           <br> 대령 : 56세 / 중령 : 53세 / 소령 : 45세
+           <br> 준위 : 55세 / 위관급 장교(대위,중위,소위) : 43세
+           <br> 원사 : 55세 / 상사 : 53세 / 중사 : 45세 / 하사 : 40세</dd></details><br>
+      
+    </div>
   </main>
 
   <footer>

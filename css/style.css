@@ -1,5 +1,13 @@
 body {
     margin: 0;
+    
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 전체 뷰포트 높이에 대해 가운데 정렬 */
 }
 
 #drillInfoForm input[type=text], select {
@@ -136,6 +144,7 @@ footer {
     padding: 1em;
     text-align: center;
     margin-top: 1em;
+
   }
 
 header {
