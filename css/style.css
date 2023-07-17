@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 #drillInfoForm input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -128,17 +132,19 @@ th.fc-col-header-cell.fc-day.fc-day-sat{
 }
 
 footer {
-    background-color: lightgray;
+    background-color: #f9f9f9;
     padding: 1em;
     text-align: center;
+    margin-top: 1em;
   }
 
 header {
-  background-color: lightgray;
+  background-color: #f9f9f9;
   padding: 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1em;
 }
 
 header nav ul {
